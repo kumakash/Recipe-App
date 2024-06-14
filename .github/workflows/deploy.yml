@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18.19.0'
+          node-version: "18.19.0"
 
       - name: Update package-lock.json
         run: |
@@ -38,5 +38,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.AKASH_TOKEN }}
         run: |
-          echo $GH_TOKEN | gh auth login --with-token
-          gh repo edit --homepage "https://${{ github.repository_owner }}.github.io/${{ github.repository }}" .
+          gh repo edit --homepage "https://${{ github.repository_owner }}.github.io/${{ github.repository }}" . --token $GH_TOKEN
