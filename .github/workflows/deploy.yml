@@ -28,14 +28,14 @@ jobs:
       - name: Build
         run: npm run build -- --configuration production --output-path docs
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.AKASH_TOKEN }}
-          publish_dir: ./docs
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.AKASH_TOKEN }}
+      #     publish_dir: ./docs
 
-      - name: Update repo description
-        env:
-          GH_TOKEN: ${{ secrets.AKASH_TOKEN }}
-        run: |
-          gh repo edit --homepage "https://${{ github.repository_owner }}.github.io/${{ github.repository }}" . --token $GH_TOKEN
+      # - name: Update repo description
+      #   env:
+      #     GH_TOKEN: ${{ secrets.AKASH_TOKEN }}
+      #   run: |
+      #     gh repo edit --homepage "https://${{ github.repository_owner }}.github.io/${{ github.repository }}" . --token $GH_TOKEN
